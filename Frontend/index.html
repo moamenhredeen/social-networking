@@ -15,13 +15,13 @@
 
         <!----------------------------------------------------------------------
         navbar  -->
-        <nav>
+        <nav id="nav">
             <div id="logo">
                 <span id="logo-text">ARAB CODERS</span>
             </div>
 
             <ul class="nav-links">
-                    <li><a href="#">HOME</a></li>
+                    <li><a class="active" href="#">HOME</a></li>
                     <li><a href="#">FRINDS</a></li>
                     <li><a href="#">PROFLIE</a></li>
                     <li><a href="#">SEARCH</a></li>
@@ -33,20 +33,74 @@
                 <img src="./assets/menu-24px.svg" alt="">
             </div>
 
+            <div id="close">
+                <img src="./assets/close-24px.svg" alt="">
+            </div>
         </nav>
 
-
+        
         <!----------------------------------------------------------------------
         main section  -->
-        <main></main>
+        <main id="main">
+            <div id="post-input">
+                <textarea name="post-content" class="post-content" placeholder="What's happening?" cols="30" rows="10"></textarea>
+
+                <div class="profile-img">
+                    <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                </div>
+
+                <button class="btn btn-add-img">
+                    <img src="./assets/add_photo_alternate-24px.svg" alt="add Photo" >
+                </button>
+
+                <button class="btn btn-add-gif">
+                    <img src="./assets/gif-24px.svg" alt="add Gif">
+                </button>
+
+                <button class="btn btn-add-emoji">
+                    <img src="./assets/sentiment_satisfied_alt-24px.svg" alt="add Emoji">
+                </button>
+                <button class="btn-submit-post" >POST</button>
+            </>
+            
+            <div id="post-output">
+
+            </div>
+
+        </main>
+            
+        <!----------------------------------------------------------------------
+        aside section  -->
+        <aside id="aside">
+            <ul id="aside-nav-links">
+                <li><a class="active" href="#">HOME</a></li>
+                <li><a href="#">FRINDS</a></li>
+                <li><a href="#">PROFLIE</a></li>
+                <li><a href="#">SEARCH</a></li>
+                <li><a href="#">SETTINGS</a></li>
+            </ul>
+
+        </aside>
+
 
         <!----------------------------------------------------------------------
         aside section  -->
-        <aside></aside>
+        <aside id="activitybar">
+            <ul id="activitybar-links">
+                <li><img src="./assets/notifications_active-24px.svg" alt=""></li>
+                <li><img src="./assets/people_alt-24px.svg" alt=""></li>
+                <li><img src="./assets/groups-24px.svg" alt=""></li>
+                <li><img src="./assets/iconmonstr-bookmark-9.svg" alt=""></li>
+             </ul>
+        </aside>
+
 
         <!----------------------------------------------------------------------
         footer section  -->
-        <footer></footer>
+        <footer id="footer"></footer>
     </div>
+    <script src="./script/jquery-3.5.1.min.js"></script>
+    <script src="./script/data.js"></script>
+    <script src="./script/index.js"></script>
 </body>
 </html>
