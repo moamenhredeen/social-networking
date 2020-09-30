@@ -1,6 +1,118 @@
-html:{
-    padding: 0;
-    margin: 0;
+/* ==================variables================================ */
+:root{
+    /* colors */
+    --main-green: #28a745;
+    --nav-text : white;
+
+    /* text */
+    --font-family : 'Monda', sans-serif;
 }
 
 
+
+
+/* ==================general================================ */
+
+*{
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;
+    font-family: var(--font-family);
+}
+
+
+
+/* ==================layout================================ */
+#main-container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "main main main aside"
+    "main main main aside"
+    "main main main aside"
+    "footer footer footer footer";
+}
+
+
+
+/* ==================navbar================================ */
+nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    max-height: 100px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.315);
+    padding: 0 20px;
+}
+
+#logo{
+    background-color: var(--main-green);
+    padding:5px;
+}
+
+#logo-text{
+    color:var(--nav-text);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links{
+    display: flex;
+    font-weight: bold;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color:var(--main-green);
+}
+
+#burger{
+    display:none;
+}
+
+main{
+    grid-area: main;
+}
+
+aside{
+    grid-area: aside;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+/* ==================Responsiv : tablet================================ */
+@media (max-width : 1000px) {
+ .nav-links{
+    width: 60%;
+}   
+}
+
+
+
+/* ==================Responsiv : mobile================================ */
+@media(max-width:750px){
+    .nav-links{
+      display:none;
+    } 
+
+    #burger{
+        display:block;
+        cursor: pointer;
+    }
+
+    #logo-text{
+        font-size: 0.8rem;
+    }
+} 
