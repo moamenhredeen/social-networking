@@ -42,26 +42,42 @@
         <!----------------------------------------------------------------------
         main section  -->
         <main id="main">
+            
             <div id="post-input">
-                <textarea name="post-content" class="post-content" placeholder="What's happening?" cols="30" rows="10"></textarea>
+                <div class="post-input-header">
+                    <div class="profile-img">
+                        <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                    </div>
 
-                <div class="profile-img">
-                    <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                    <textarea name="post-content" class="post-content" placeholder="What's happening?" cols="30" rows="10"></textarea>
+
                 </div>
 
-                <button class="btn btn-add-img">
-                    <img src="./assets/add_photo_alternate-24px.svg" alt="add Photo" >
-                </button>
+                <div id="line">
+                    <hr>
+                </div>
 
-                <button class="btn btn-add-gif">
-                    <img src="./assets/gif-24px.svg" alt="add Gif">
-                </button>
+                <div class="post-input-bottom">
+                    <div class="actions">
+                        <div class="action action-photo">
+                            <img src="./assets/add_photo_alternate-24px.svg" alt="add Photo" >
+                        </div>
+        
+                        <div class="action action-gif">
+                            <img src="./assets/gif-24px.svg" alt="add Gif">
+                        </div>
+        
+                        <div class="action action-emoji">
+                            <img src="./assets/sentiment_satisfied_alt-24px.svg" alt="add Emoji">
+                        </div>
+                    </div>
 
-                <button class="btn btn-add-emoji">
-                    <img src="./assets/sentiment_satisfied_alt-24px.svg" alt="add Emoji">
-                </button>
-                <button class="btn-submit-post" >POST</button>
-            </>
+                    <div class="action-submit">
+                        <button>POST</button>
+                    </div>
+                </div>
+
+            </div>
             
             <div id="post-output">
 
