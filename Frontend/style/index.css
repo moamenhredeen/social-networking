@@ -26,6 +26,9 @@
     outline:none;
 }
 
+*::selection{
+    background-color:yellow;
+}
 
 
 /* ==================layout================================ */
@@ -39,7 +42,7 @@
     "main main aside activitybar"
     "main main aside activitybar"
     "footer footer footer footer"; */
-    grid-template-columns: auto 250px 60px;
+    grid-template-columns: 350px auto 350px 60px;
     grid-template-rows: 60px auto 100px;
 }
 
@@ -47,7 +50,7 @@
 
 /* ==================navbar================================ */
 #nav{
-    grid-column: 1/4;
+    grid-column: 1/5;
     grid-row: 1/2;
     display: flex;
     justify-content: space-between ;
@@ -107,7 +110,7 @@
 /* ================================activitybar======================================== */
 
 #activitybar{
-    grid-column: 3/4;
+    grid-column: 4/5;
     grid-row: 2/3;
     background-color: var(--gray);
     display:flex;
@@ -125,113 +128,51 @@
     cursor: pointer;
 }
 
+/* ================================aside-left======================================== */
+#aside-left{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
 
 
 /* ================================main======================================== */
 
 
-/* #post-input{
-    height: 25 vh;
-    display : grid;
-    grid-template-rows: repeat(6,1fr) ;
-    grid-template-columns: repeat(10,1fr);
-    box-shadow: 3px 3px 10px var(--gray);
-    margin:30px ;
-    max-width: 70%;
-}
-
-.post-input, .btn{
-    background: none;
-    border:none;
-    padding:0;
-    margin:0;
-    cursor: pointer;
-}
-
-.post-input, .profile-img{
-    grid-column: 1/2;
-    grid-row: 1/4;
-    padding:10px
-}
-
-.post-input, .profile-img img{
-    width: 70px;
-}
-
-.post-input, .post-content{
-    grid-column: 2/11;
-    grid-row: 1/5;
-    border:none;
-    font-size: 20px; 
-    padding:20px 10px;  
-}
-
-.post-input, .btn-add-img{
-    grid-row: 5/7;
-    grid-column: 1/2;
-}
-
-.post-input, .btn-add-gif{
-    grid-row: 5/7;
-    grid-column: 2/3;
-}
-
-
-.post-input, .btn-add-emoji{
-    grid-row: 5/7;
-    grid-column: 3/4;
-}
-
-.post-input, .btn-submit-post{
-    grid-row: 5/7;
-    grid-column: 9/11;
-    background-color: var(--main-green);
-    color:var(--text);
-    font-size: 20px;
-    border-radius: 30px;
-    border:none;
-    width: 70%;
-    height: 80%;
-    font-weight: bold;
-}
-
-
-
-.post-input-btn img{
-    width: 35px;
-} */
-
 #main{
-    grid-column: 1/2;
+    grid-column: 2/3;
     grid-row: 2/3;
     display : flex;
     flex-direction: column;
+    padding:20px 70px
 }
 
+/* ================================post-input======================================== */
+
+
 #post-input{
-    height: 25vh;
-    margin:30px ;
+    height: 200px;
+    margin:5px;
     padding:10px;
-    max-width: 70%;
     display: flex;
     flex-direction: column;
     box-shadow: 3px 3px 5px var(--gray-hell);
 }
 
-.post-input-header{
+#post-input-header{
     display: flex;
-    height: 70%;
+    height: 120px;
 }
 
-.profile-img{
-    width: 15%;
+#profile-img{
+    padding:5px;
 }
 
-.profile-img img{
-    width: 80%;
+#profile-img img{
+    width: 70px;
 }
 
-.post-content{
+#post-content{
     width: 85%;
     height: 100%;
     border:none;
@@ -240,13 +181,12 @@
     resize: none;
 }
 
-.post-content:focus{
+#post-content:focus{
     border:none;
 }
 
 #line{
-    height: 10%;
-    padding:10px 0;
+    padding:9px 0;
 }
 
 #line > hr{
@@ -254,34 +194,32 @@
 }
 
 
-
-
-.post-input-bottom{
+#post-input-bottom{
     display: flex;
     justify-content: space-between;
-    height: 20%;
+    height: 40px;
 }
 
 
-.actions{
+#actions{
     width: 40%;
     display: flex;
 }
 
-.actions > .action{
+#actions > .action{
     padding:10px;
 }
 
-.action > img{
+#actions > .action > img{
     cursor: pointer;
 
 }
 
-.action-submit{
-    width: 20%;
+#action-submit{
+    width: 100px;
 }
 
-.action-submit > button{
+#action-submit > button{
     width: 100%;
     height: 100%;
     background: var(--main-green);
@@ -293,9 +231,45 @@
     cursor: pointer;
 }
 
-/* ================================aside======================================== */
-#aside{
-    grid-column: 2/3;
+
+/* ================================post-output======================================== */
+
+
+.post-output{
+    margin: 5px;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 5px var(--gray-hell);
+}
+
+.post-output-header{
+    display:flex;
+}
+
+.profile-img{
+    padding:5px;
+}
+
+.profile-img > img{
+    width: 70px;
+}
+
+
+.post-output-bottom > .actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+.post-output-bottom img{
+    width:30px;
+    cursor: pointer;
+}
+
+
+/* ================================aside-right======================================== */
+#aside-right{
+    grid-column: 3/4;
     grid-row: 2/3;
 }
 
@@ -305,6 +279,7 @@
     height: 100%;
     text-align: center;
     background-color: var(--gray);
+    display: none;
 }
 
 #aside-nav-links li{
@@ -324,13 +299,22 @@
 
 /* ================================footer=================================== === */
 #footer{
-    grid-column: 1/4;
+    grid-column: 1/5;
     grid-row: 3/4;
 }
 
 
 /* ==================Responsiv : tablet================================ */
 @media (max-width : 1000px) {
+    
+    #main-container{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: auto 350px 60px;
+        grid-template-rows: 60px auto 100px;
+    }
+
     .nav-links{
         width: 60%;
     }   

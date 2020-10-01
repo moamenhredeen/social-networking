@@ -3,12 +3,11 @@
 $(document).ready(() =>  {
 
     // global variables : 
+    const main = $('#main')
     const asideNavLinks = $('#aside-nav-links');
+    const post = $('.post-output');
     const btn_burger = $('#burger');
     const btn_close = $('#close');
-
-    // initial state 
-    asideNavLinks.hide();
 
 
     // aside nav bar :show / hide
@@ -23,5 +22,11 @@ $(document).ready(() =>  {
         btn_burger.show();
         asideNavLinks.hide();
     })
+
+    // const posts_html = posts.forEach((item, index) =>  {
+    //     const copy = post.clone().show();
+    //     main.append(copy);
+    // })
+
 
 });

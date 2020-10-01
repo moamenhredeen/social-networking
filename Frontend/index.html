@@ -8,13 +8,13 @@
     <title>Home page</title>
 </head>
 <body>
-    <!----------------------------------------------------------------------
-         main container  -->
+<!----------------------------------------------------------------------
+main container  -->
     <div id="main-container">
 
 
-        <!----------------------------------------------------------------------
-        navbar  -->
+<!----------------------------------------------------------------------
+navbar  -->
         <nav id="nav">
             <div id="logo">
                 <span id="logo-text">ARAB CODERS</span>
@@ -38,18 +38,28 @@
             </div>
         </nav>
 
+<!----------------------------------------------------------------------
+aside-left   -->
         
-        <!----------------------------------------------------------------------
-        main section  -->
+        <aside id="aside-left">
+
+        </aside>
+
+        
+<!----------------------------------------------------------------------
+main section  -->
         <main id="main">
-            
+
+
+<!----------------------------------------------------------------------
+input-post  -->
             <div id="post-input">
-                <div class="post-input-header">
-                    <div class="profile-img">
+                <div id="post-input-header">
+                    <div id="profile-img">
                         <img src="./assets/account_circle-24px.svg" alt="Profile Image">
                     </div>
 
-                    <textarea name="post-content" class="post-content" placeholder="What's happening?" cols="30" rows="10"></textarea>
+                    <textarea name="post-content" id="post-content" placeholder="What's happening?" cols="30" rows="10"></textarea>
 
                 </div>
 
@@ -57,37 +67,71 @@
                     <hr>
                 </div>
 
-                <div class="post-input-bottom">
-                    <div class="actions">
-                        <div class="action action-photo">
+                <div id="post-input-bottom">
+                    <div id="actions">
+                        <div class="action" id="action-photo">
                             <img src="./assets/add_photo_alternate-24px.svg" alt="add Photo" >
                         </div>
         
-                        <div class="action action-gif">
+                        <div class="action" id="action-gif">
                             <img src="./assets/gif-24px.svg" alt="add Gif">
                         </div>
         
-                        <div class="action action-emoji">
+                        <div class="action" id="action-emoji">
                             <img src="./assets/sentiment_satisfied_alt-24px.svg" alt="add Emoji">
                         </div>
                     </div>
 
-                    <div class="action-submit">
+                    <div id="action-submit">
                         <button>POST</button>
                     </div>
                 </div>
 
             </div>
             
-            <div id="post-output">
+<!----------------------------------------------------------------------
+output-post  -->
+            <div class="post-output">
+                    <div class="post-output-header">
+                        <div class="profile-img">
+                            <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                        </div>
 
+                        <div class="post-content">
+                            <p>
+                                
+                            </p>
+                        </div>
+
+                    </div>
+    
+                    <div id="line">
+                        <hr>
+                    </div>
+    
+                    <div class="post-output-bottom">
+                        <div class="actions">
+                            <div class="action action-photo">
+                                <img src="./assets/favorite_border-24px.svg" alt="add Photo" >
+                            </div>
+            
+                            <div class="action action-gif">
+                                <img src="./assets/comment-24px.svg" alt="add Gif">
+                            </div>
+            
+                            <div class="action action-emoji">
+                                <img src="./assets/share-24px.svg" alt="add Emoji">
+                            </div>
+                        </div>
+    
+                    </div>
             </div>
 
         </main>
             
-        <!----------------------------------------------------------------------
-        aside section  -->
-        <aside id="aside">
+<!----------------------------------------------------------------------
+aside-right -->
+        <aside id="aside-right">
             <ul id="aside-nav-links">
                 <li><a class="active" href="#">HOME</a></li>
                 <li><a href="#">FRINDS</a></li>
@@ -99,8 +143,8 @@
         </aside>
 
 
-        <!----------------------------------------------------------------------
-        aside section  -->
+<!----------------------------------------------------------------------
+activity-bar -->
         <aside id="activitybar">
             <ul id="activitybar-links">
                 <li><img src="./assets/notifications_active-24px.svg" alt=""></li>
@@ -111,8 +155,8 @@
         </aside>
 
 
-        <!----------------------------------------------------------------------
-        footer section  -->
+<!----------------------------------------------------------------------
+footer   -->
         <footer id="footer"></footer>
     </div>
     <script src="./script/jquery-3.5.1.min.js"></script>
