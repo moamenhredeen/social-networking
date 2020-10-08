@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,59 +8,91 @@
     <link rel="stylesheet" href="./style/index.css">
     <title>Home page</title>
 </head>
+
 <body>
-<!----------------------------------------------------------------------
-main container  -->
+
     <div id="main-container">
+        <!----------------------------------------------------------------------
+        modal -->
+        <div id="backdrop"></div>
+        <div id="modal">
+            <div id="modal-input">
+                <input type="text">
+            </div>
+            <div id="modal-nav">
+                <ul>
+                    <li><a class="active" href="#">HOME</a></li>
+                    <li><a href="#">FRINDS</a></li>
+                    <li><a href="#">PROFLIE</a></li>
+                    <li><a href="#">SEARCH</a></li>
+                    <li><a href="#">SETTINGS</a></li>
+                </ul>
+            </div>
+        </div>
 
+        <!----------------------------------------------------------------------
+        activity-bar -->
+        <aside id="activitybar">
+            <div id="burger">
+                <img src="./assets/menu-24px.svg" alt="">
+            </div>
+            <div id="close">
+                <img src="./assets/close-24px.svg" alt="">
+            </div>
+            <ul id="activitybar-links">
+                <li><img src="./assets/notifications_active-24px.svg" alt=""></li>
+                <li><img src="./assets/people_alt-24px.svg" alt=""></li>
+                <li><img src="./assets/groups-24px.svg" alt=""></li>
+                <li><img src="./assets/iconmonstr-bookmark-9.svg" alt=""></li>
+            </ul>
+        </aside>
 
-<!----------------------------------------------------------------------
-navbar  -->
+        <!----------------------------------------------------------------------
+    nav-bar -->
         <nav id="nav">
             <div id="logo">
                 <span id="logo-text">ARAB CODERS</span>
             </div>
 
             <ul class="nav-links">
-                    <li><a class="active" href="#">HOME</a></li>
-                    <li><a href="#">FRINDS</a></li>
-                    <li><a href="#">PROFLIE</a></li>
-                    <li><a href="#">SEARCH</a></li>
-                    <li><a href="#">SETTINGS</a></li>
+                <li><a class="active" href="#">HOME</a></li>
+                <li><a href="#">FRINDS</a></li>
+                <li><a href="#">PROFLIE</a></li>
+                <li><a href="#">SEARCH</a></li>
+                <li><a href="#">SETTINGS</a></li>
             </ul>
-
-
-            <div id="burger">
-                <img src="./assets/menu-24px.svg" alt="">
-            </div>
-
-            <div id="close">
-                <img src="./assets/close-24px.svg" alt="">
-            </div>
         </nav>
 
-<!----------------------------------------------------------------------
-aside-left   -->
-        
-        <aside id="aside-left">
 
+
+        <!----------------------------------------------------------------------
+    aside-left   -->
+        <aside id="aside-left">
         </aside>
 
-        
-<!----------------------------------------------------------------------
-main section  -->
+
+        <!----------------------------------------------------------------------
+    aside-right   -->
+        <aside id="aside-right">
+        </aside>
+
+
+
+        <!----------------------------------------------------------------------
+    main section  -->
         <main id="main">
 
 
-<!----------------------------------------------------------------------
-input-post  -->
+            <!----------------------------------------------------------------------
+        input-post  -->
             <div id="post-input">
                 <div id="post-input-header">
                     <div id="profile-img">
                         <img src="./assets/account_circle-24px.svg" alt="Profile Image">
                     </div>
 
-                    <textarea name="post-content" id="post-content" placeholder="What's happening?" cols="30" rows="10"></textarea>
+                    <textarea name="post-content" id="post-content" placeholder="What's happening?" cols="30"
+                        rows="10"></textarea>
 
                 </div>
 
@@ -70,13 +103,13 @@ input-post  -->
                 <div id="post-input-bottom">
                     <div id="actions">
                         <div class="action" id="action-photo">
-                            <img src="./assets/add_photo_alternate-24px.svg" alt="add Photo" >
+                            <img src="./assets/add_photo_alternate-24px.svg" alt="add Photo">
                         </div>
-        
+
                         <div class="action" id="action-gif">
                             <img src="./assets/gif-24px.svg" alt="add Gif">
                         </div>
-        
+
                         <div class="action" id="action-emoji">
                             <img src="./assets/sentiment_satisfied_alt-24px.svg" alt="add Emoji">
                         </div>
@@ -88,79 +121,267 @@ input-post  -->
                 </div>
 
             </div>
-            
-<!----------------------------------------------------------------------
-output-post  -->
+
+            <!----------------------------------------------------------------------
+        output-post  -->
             <div class="post-output">
-                    <div class="post-output-header">
-                        <div class="profile-img">
-                            <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                <div class="post-output-header">
+                    <div class="profile-img">
+                        <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                    </div>
+
+                    <div class="post-content">
+                        <p>
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="line">
+                    <hr>
+                </div>
+
+                <div class="post-output-bottom">
+                    <div class="actions">
+                        <div class="action action-photo">
+                            <img src="./assets/favorite_border-24px.svg" alt="add Photo">
                         </div>
 
-                        <div class="post-content">
-                            <p>
-                                
-                            </p>
+                        <div class="action action-gif">
+                            <img src="./assets/comment-24px.svg" alt="add Gif">
                         </div>
 
-                    </div>
-    
-                    <div id="line">
-                        <hr>
-                    </div>
-    
-                    <div class="post-output-bottom">
-                        <div class="actions">
-                            <div class="action action-photo">
-                                <img src="./assets/favorite_border-24px.svg" alt="add Photo" >
-                            </div>
-            
-                            <div class="action action-gif">
-                                <img src="./assets/comment-24px.svg" alt="add Gif">
-                            </div>
-            
-                            <div class="action action-emoji">
-                                <img src="./assets/share-24px.svg" alt="add Emoji">
-                            </div>
+                        <div class="action action-emoji">
+                            <img src="./assets/share-24px.svg" alt="add Emoji">
                         </div>
-    
                     </div>
+
+                </div>
             </div>
 
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <div class="post-output">
+                <div class="post-output-header">
+                    <div class="profile-img">
+                        <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                    </div>
+
+                    <div class="post-content">
+                        <p>
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="line">
+                    <hr>
+                </div>
+
+                <div class="post-output-bottom">
+                    <div class="actions">
+                        <div class="action action-photo">
+                            <img src="./assets/favorite_border-24px.svg" alt="add Photo">
+                        </div>
+
+                        <div class="action action-gif">
+                            <img src="./assets/comment-24px.svg" alt="add Gif">
+                        </div>
+
+                        <div class="action action-emoji">
+                            <img src="./assets/share-24px.svg" alt="add Emoji">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="post-output">
+                <div class="post-output-header">
+                    <div class="profile-img">
+                        <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                    </div>
+
+                    <div class="post-content">
+                        <p>
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="line">
+                    <hr>
+                </div>
+
+                <div class="post-output-bottom">
+                    <div class="actions">
+                        <div class="action action-photo">
+                            <img src="./assets/favorite_border-24px.svg" alt="add Photo">
+                        </div>
+
+                        <div class="action action-gif">
+                            <img src="./assets/comment-24px.svg" alt="add Gif">
+                        </div>
+
+                        <div class="action action-emoji">
+                            <img src="./assets/share-24px.svg" alt="add Emoji">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="post-output">
+                <div class="post-output-header">
+                    <div class="profile-img">
+                        <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                    </div>
+
+                    <div class="post-content">
+                        <p>
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="line">
+                    <hr>
+                </div>
+
+                <div class="post-output-bottom">
+                    <div class="actions">
+                        <div class="action action-photo">
+                            <img src="./assets/favorite_border-24px.svg" alt="add Photo">
+                        </div>
+
+                        <div class="action action-gif">
+                            <img src="./assets/comment-24px.svg" alt="add Gif">
+                        </div>
+
+                        <div class="action action-emoji">
+                            <img src="./assets/share-24px.svg" alt="add Emoji">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="post-output">
+                <div class="post-output-header">
+                    <div class="profile-img">
+                        <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                    </div>
+
+                    <div class="post-content">
+                        <p>
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="line">
+                    <hr>
+                </div>
+
+                <div class="post-output-bottom">
+                    <div class="actions">
+                        <div class="action action-photo">
+                            <img src="./assets/favorite_border-24px.svg" alt="add Photo">
+                        </div>
+
+                        <div class="action action-gif">
+                            <img src="./assets/comment-24px.svg" alt="add Gif">
+                        </div>
+
+                        <div class="action action-emoji">
+                            <img src="./assets/share-24px.svg" alt="add Emoji">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="post-output">
+                <div class="post-output-header">
+                    <div class="profile-img">
+                        <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                    </div>
+
+                    <div class="post-content">
+                        <p>
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="line">
+                    <hr>
+                </div>
+
+                <div class="post-output-bottom">
+                    <div class="actions">
+                        <div class="action action-photo">
+                            <img src="./assets/favorite_border-24px.svg" alt="add Photo">
+                        </div>
+
+                        <div class="action action-gif">
+                            <img src="./assets/comment-24px.svg" alt="add Gif">
+                        </div>
+
+                        <div class="action action-emoji">
+                            <img src="./assets/share-24px.svg" alt="add Emoji">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="post-output">
+                <div class="post-output-header">
+                    <div class="profile-img">
+                        <img src="./assets/account_circle-24px.svg" alt="Profile Image">
+                    </div>
+
+                    <div class="post-content">
+                        <p>
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="line">
+                    <hr>
+                </div>
+
+                <div class="post-output-bottom">
+                    <div class="actions">
+                        <div class="action action-photo">
+                            <img src="./assets/favorite_border-24px.svg" alt="add Photo">
+                        </div>
+
+                        <div class="action action-gif">
+                            <img src="./assets/comment-24px.svg" alt="add Gif">
+                        </div>
+
+                        <div class="action action-emoji">
+                            <img src="./assets/share-24px.svg" alt="add Emoji">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+
         </main>
-            
-<!----------------------------------------------------------------------
-aside-right -->
-        <aside id="aside-right">
-            <ul id="aside-nav-links">
-                <li><a class="active" href="#">HOME</a></li>
-                <li><a href="#">FRINDS</a></li>
-                <li><a href="#">PROFLIE</a></li>
-                <li><a href="#">SEARCH</a></li>
-                <li><a href="#">SETTINGS</a></li>
-            </ul>
-
-        </aside>
-
-
-<!----------------------------------------------------------------------
-activity-bar -->
-        <aside id="activitybar">
-            <ul id="activitybar-links">
-                <li><img src="./assets/notifications_active-24px.svg" alt=""></li>
-                <li><img src="./assets/people_alt-24px.svg" alt=""></li>
-                <li><img src="./assets/groups-24px.svg" alt=""></li>
-                <li><img src="./assets/iconmonstr-bookmark-9.svg" alt=""></li>
-             </ul>
-        </aside>
-
-
-<!----------------------------------------------------------------------
-footer   -->
-        <footer id="footer"></footer>
     </div>
+
+
     <script src="./script/jquery-3.5.1.min.js"></script>
     <script src="./script/data.js"></script>
     <script src="./script/index.js"></script>
 </body>
+
 </html>

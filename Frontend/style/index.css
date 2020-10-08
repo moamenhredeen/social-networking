@@ -1,13 +1,17 @@
 /* ==================variables================================ */
-:root{
+:root {
     /* colors */
-    --main-green: #28a745;
-    --nav-text : white;
-    --text: #ffffff;
-    --gray : #333333;
-    --gray-hell:#33333377;
+    /* --main-green: #28a745; */
+    --main-green: #69971E;
+    --main-green-hell: #69971E66;
+    --text-hell: #ffffff;
+    --text-dark: #050505;
+    --gray: #333333;
+    --gray-hell: rgba(0, 0, 0, 0.4);
+    --white-gray: rgba(0, 0, 0, 0.4);
+    --white: #ffffff;
     /* text */
-    --font-family : 'Monda', sans-serif;
+    --font-family: 'Monda', sans-serif;
 }
 
 
@@ -15,325 +19,390 @@
 
 /* ==================general================================ */
 
-*{
+* {
     box-sizing: border-box;
-    padding:0px;
-    margin:0px;
+    padding: 0px;
+    margin: 0px;
     font-family: var(--font-family);
 }
 
-*,*:focus,*:hover{
-    outline:none;
+*,
+*:focus,
+*:hover {
+    outline: none;
 }
 
-*::selection{
-    background-color:yellow;
+*::selection {
+    background-color: yellow;
+}
+
+/* ================================main-container======================================== */
+#main-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ================================modal======================================== */
+#modal {
+    display: block;
+    position: fixed;
+    z-index: 30;
+    top: 10%;
+    left: 30%;
+    width: 40%;
+    background: white;
+    box-shadow: 1px 1px 6px var(--gray-hell);
+    padding: 1rem;
 }
 
 
-/* ==================layout================================ */
-#main-container{
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    /* grid-template-areas: 
-    "nav nav nav nav"
-    "main main aside activitybar"
-    "main main aside activitybar"
-    "main main aside activitybar"
-    "footer footer footer footer"; */
-    grid-template-columns: 350px auto 350px 60px;
-    grid-template-rows: 60px auto 100px;
+#modal-input {
+    margin: 0.5rem 0;
 }
 
+#modal-input input {
+    width: 100%;
+    font: inherit;
+    resize: none;
+}
+
+#modal-input input:focus {
+    outline: none;
+    background: #ffdbfe;
+    border-color: #521751;
+}
+
+#backdrop {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+#modal-nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-nav li {
+    list-style: none;
+}
+
+#modal-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: inline-block;
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    font-weight: bold;
+}
+
+#modal-nav a:hover {
+    background: var(--main-green-hell);
+}
+
+
+
+
+/* ================================activitybar======================================== */
+
+
+#activitybar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-width: 60px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--gray);
+}
+
+
+#burger {
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+
+#close {
+    cursor: pointer;
+    margin: 20px 0;
+    display: none;
+}
+
+
+#activitybar-links li {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+#activitybar-links li {
+    cursor: pointer;
+}
 
 
 /* ==================navbar================================ */
-#nav{
-    grid-column: 1/5;
-    grid-row: 1/2;
+#nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 60px;
+    z-index: 10;
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
     align-items: center;
     height: 60px;
-    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.315); */
-    padding: 0 20px;
-    background-color:var(--gray);
+    background-color: var(--gray);
 }
 
-#logo{
+#logo {
     background-color: var(--main-green);
-    padding:10px;
+    padding: 10px;
     height: 60px;
 }
 
-#logo-text{
-    color:var(--nav-text);
+#logo-text {
+    color: var(--text-hell);
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.nav-links{
+.nav-links {
     display: flex;
     font-weight: bold;
     width: 50%;
     justify-content: space-around;
 }
 
-.nav-links li{
+.nav-links li {
     list-style: none;
 }
 
-.nav-links a{
+.nav-links a {
     text-decoration: none;
-    color:var(--nav-text);
+    color: var(--nav-text);
     display: inline-block;
-    padding:20px;
+    padding: 20px;
     height: 60px;
 }
 
-#burger{
-    display:none;
-}
 
-
-#close{
-    cursor: pointer;
-    display:none;
-}
-
-
-.active{
+.active {
     background-color: var(--main-green);
 }
 
-/* ================================activitybar======================================== */
-
-#activitybar{
-    grid-column: 4/5;
-    grid-row: 2/3;
-    background-color: var(--gray);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-#activitybar-links li{
-    list-style: none;
-    margin-bottom: 30px;
-}
-
-#activitybar-links li{
-    cursor: pointer;
-}
-
 /* ================================aside-left======================================== */
-#aside-left{
-    grid-column: 1/2;
-    grid-row: 2/3;
+#aside-left {
+    position: fixed;
+    top: 60px;
+    left: 60px;
+    width: 25%;
+    bottom: 0;
+    z-index: 10;
+    background: red;
 }
 
+/* ================================aside-right======================================== */
+#aside-right {
+    position: fixed;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    width: 25%;
+    z-index: 10;
+    background: red;
+}
 
 
 /* ================================main======================================== */
 
 
-#main{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    display : flex;
-    flex-direction: column;
-    padding:20px 70px
-}
-
-/* ================================post-input======================================== */
-
-
-#post-input{
-    height: 200px;
-    margin:5px;
-    padding:10px;
+#main {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: calc(60px + 25vw);
+    right: 25vw;
+    z-index: 5;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 5px var(--gray-hell);
 }
 
-#post-input-header{
+
+#post-input {
+    height: 200px;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px var(--gray-hell);
+}
+
+#post-input-header {
     display: flex;
     height: 120px;
 }
 
-#profile-img{
-    padding:5px;
+#profile-img {
+    padding: 5px;
 }
 
-#profile-img img{
+#profile-img img {
     width: 70px;
 }
 
-#post-content{
+#post-content {
     width: 85%;
     height: 100%;
-    border:none;
-    padding:20px;
+    border: none;
+    padding: 20px;
     font-size: 20px;
     resize: none;
 }
 
-#post-content:focus{
-    border:none;
+#post-content:focus {
+    border: none;
 }
 
-#line{
-    padding:9px 0;
+#line {
+    padding: 9px 0;
 }
 
-#line > hr{
+#line>hr {
     border: 1px solid var(--main-green);
 }
 
 
-#post-input-bottom{
+#post-input-bottom {
     display: flex;
     justify-content: space-between;
     height: 40px;
 }
 
 
-#actions{
+#actions {
     width: 40%;
     display: flex;
 }
 
-#actions > .action{
-    padding:10px;
+#actions>.action {
+    padding: 10px;
 }
 
-#actions > .action > img{
+#actions>.action>img {
     cursor: pointer;
 
 }
 
-#action-submit{
+#action-submit {
     width: 100px;
 }
 
-#action-submit > button{
+#action-submit>button {
     width: 100%;
     height: 100%;
     background: var(--main-green);
-    color:var(--text);
+    color: var(--text);
     font-weight: bold;
-    border:none;    
-    font-size:20px;
+    border: none;
+    font-size: 20px;
     border-radius: 40px;
     cursor: pointer;
 }
 
 
-/* ================================post-output======================================== */
 
-
-.post-output{
+.post-output {
     margin: 5px;
-    padding:10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 5px var(--gray-hell);
+    box-shadow: 0 0 10px var(--gray-hell);
 }
 
-.post-output-header{
-    display:flex;
+.post-output-header {
+    display: flex;
 }
 
-.profile-img{
-    padding:5px;
+.profile-img {
+    padding: 5px;
 }
 
-.profile-img > img{
+.profile-img>img {
     width: 70px;
 }
 
 
-.post-output-bottom > .actions{
+.post-output-bottom>.actions {
     display: flex;
     justify-content: space-around;
 }
 
-.post-output-bottom img{
-    width:30px;
+.post-output-bottom img {
+    width: 30px;
     cursor: pointer;
-}
-
-
-/* ================================aside-right======================================== */
-#aside-right{
-    grid-column: 3/4;
-    grid-row: 2/3;
-}
-
-#aside-nav-links{
-    display:flex;
-    flex-direction: column;
-    height: 100%;
-    text-align: center;
-    background-color: var(--gray);
-    display: none;
-}
-
-#aside-nav-links li{
-    list-style: none;
-    width: 100%;
-}
-
-#aside-nav-links a{
-    display: inline-block;
-    width: 100%;
-    text-decoration: none;
-    color: var(--nav-text);
-    font-weight: bold;
-    padding: 20px 0;
-    border-bottom: white solid 1px;
-}
-
-/* ================================footer=================================== === */
-#footer{
-    grid-column: 1/5;
-    grid-row: 3/4;
 }
 
 
 /* ==================Responsiv : tablet================================ */
 @media (max-width : 1000px) {
-    
-    #main-container{
+
+    #main-container {
         height: 100vh;
         width: 100vw;
         display: grid;
         grid-template-columns: auto 350px 60px;
         grid-template-rows: 60px auto 100px;
+        grid-template-areas:
+            "nav nav nav"
+            "main aside-right activitybar"
+            "footer footer footer";
     }
 
-    .nav-links{
+
+    .nav-links {
         width: 60%;
-    }   
+    }
 }
 
 
 /* ==================================================================== */
 /* ==================Responsiv : mobile================================ */
-@media(max-width:750px){
-    .nav-links{
-      display:none;
-    } 
+@media(max-width:750px) {
 
-    #burger{
-        display:block;
+    #main-container {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: auto 60px;
+        grid-template-rows: 60px auto 100px;
+        grid-template-areas:
+            "nav nav"
+            "main activitybar"
+            "footer footer";
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    #burger {
+        display: block;
         cursor: pointer;
     }
 
-    #logo-text{
+    #logo-text {
         font-size: 1rem;
     }
-} 
+}
