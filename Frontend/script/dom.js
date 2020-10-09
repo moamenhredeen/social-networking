@@ -1,3 +1,5 @@
 // output post seciton =====================
-const MAIN = $('#main');
-const OUTPUT_POST = $('.post-output');
+const main = $('#post-list');
+const outputPost = $('.post-output');
+const textArea = $('#post-content');
+const submitBtn = $('#action-submit')
