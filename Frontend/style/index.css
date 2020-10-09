@@ -1,7 +1,6 @@
 /* ==================variables================================ */
 :root {
     /* colors */
-    /* --main-green: #28a745; */
     --main-green: #69971E;
     --main-green-hell: #69971E66;
     --text-hell: #ffffff;
@@ -47,7 +46,7 @@
 
 /* ================================modal======================================== */
 #modal {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 30;
     top: 10%;
@@ -56,6 +55,16 @@
     background: white;
     box-shadow: 1px 1px 6px var(--gray-hell);
     padding: 1rem;
+}
+
+#modal-close {
+    width: 100%;
+    text-align: right;
+    padding: 5px 10px;
+}
+
+#modal-close-icon {
+    cursor: pointer;
 }
 
 
@@ -76,7 +85,7 @@
 }
 
 #backdrop {
-    display: block;
+    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -181,8 +190,7 @@
 .nav-links {
     display: flex;
     font-weight: bold;
-    width: 50%;
-    justify-content: space-around;
+    justify-content: right;
 }
 
 .nav-links li {
@@ -191,12 +199,15 @@
 
 .nav-links a {
     text-decoration: none;
-    color: var(--nav-text);
+    color: var(--text-hell);
     display: inline-block;
     padding: 20px;
     height: 60px;
 }
 
+.nav-links a:hover {
+    background-color: var(--main-green-hell);
+}
 
 .active {
     background-color: var(--main-green);
@@ -210,7 +221,6 @@
     width: 25%;
     bottom: 0;
     z-index: 10;
-    background: red;
 }
 
 /* ================================aside-right======================================== */
@@ -221,7 +231,6 @@
     bottom: 0;
     width: 25%;
     z-index: 10;
-    background: red;
 }
 
 
@@ -237,12 +246,13 @@
     z-index: 5;
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 
 #post-input {
     height: 200px;
-    margin: 5px;
+    margin: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -254,13 +264,16 @@
     height: 120px;
 }
 
-#profile-img {
+.profile-img {
     padding: 5px;
 }
 
-#profile-img img {
-    width: 70px;
+.profile-img>span {
+    color: var(--main-green);
+    cursor: pointer;
+    font-size: 5rem;
 }
+
 
 #post-content {
     width: 85%;
@@ -275,12 +288,12 @@
     border: none;
 }
 
-#line {
+.line {
     padding: 9px 0;
 }
 
-#line>hr {
-    border: 1px solid var(--main-green);
+.line>hr {
+    border: 1px solid var(--main-green-hell);
 }
 
 
@@ -300,9 +313,10 @@
     padding: 10px;
 }
 
-#actions>.action>img {
+#actions>.action>span {
     cursor: pointer;
-
+    color: var(--main-green);
+    font-size: 2rem;
 }
 
 #action-submit {
@@ -313,7 +327,7 @@
     width: 100%;
     height: 100%;
     background: var(--main-green);
-    color: var(--text);
+    color: var(--text-hell);
     font-weight: bold;
     border: none;
     font-size: 20px;
@@ -324,85 +338,125 @@
 
 
 .post-output {
-    margin: 5px;
+    margin: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 10px var(--gray-hell);
 }
 
+
 .post-output-header {
     display: flex;
 }
 
-.profile-img {
-    padding: 5px;
+
+.post-actions span {
+    color: var(--main-green);
+    cursor: pointer;
+    border-radius: 25px;
 }
 
-.profile-img>img {
-    width: 70px;
+.post-actions span:hover {
+    background-color: var(--main-green-hell);
 }
 
+.post-content {
+    width: 100%;
+}
 
 .post-output-bottom>.actions {
     display: flex;
     justify-content: space-around;
 }
 
-.post-output-bottom img {
-    width: 30px;
+.post-output-bottom span {
+    cursor: pointer;
+    color: var(--main-green);
+    font-size: 2rem;
+}
+
+
+
+
+.comment-input {
+    position: relative;
+    padding: 10px;
+}
+
+.comment-input input {
+    width: 100%;
+    border-radius: 25px;
+    border: solid 1px var(--main-green-hell);
+    padding: 5px 40px 5px 20px;
+}
+
+
+.comment-input span {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    color: var(--main-green);
+    font-size: 1.3rem;
     cursor: pointer;
 }
 
-
-/* ==================Responsiv : tablet================================ */
-@media (max-width : 1000px) {
-
-    #main-container {
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-        grid-template-columns: auto 350px 60px;
-        grid-template-rows: 60px auto 100px;
-        grid-template-areas:
-            "nav nav nav"
-            "main aside-right activitybar"
-            "footer footer footer";
-    }
-
-
-    .nav-links {
-        width: 60%;
-    }
+.comment-output {
+    display: flex;
+    padding: 10px;
+    align-items: center;
 }
 
+.comment-output span {
+    font-size: 2rem;
+    padding: 10px;
+    color: var(--main-green);
+}
 
-/* ==================================================================== */
-/* ==================Responsiv : mobile================================ */
-@media(max-width:750px) {
+.comment-output p {
+    font-size: 0.9rem;
+    padding: 10px;
+}
 
-    #main-container {
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-        grid-template-columns: auto 60px;
-        grid-template-rows: 60px auto 100px;
-        grid-template-areas:
-            "nav nav"
-            "main activitybar"
-            "footer footer";
-    }
+/* ==================Responsiv : tablet================================ */
+@media (max-width : 1024px) {
 
     .nav-links {
         display: none;
     }
 
-    #burger {
-        display: block;
-        cursor: pointer;
+
+    #aside-right {
+        display: none;
     }
 
-    #logo-text {
-        font-size: 1rem;
+    #aside-left {
+        width: 30%;
     }
+
+    #main {
+        left: calc(60px + 30vw);
+        right: 0;
+    }
+
+}
+
+
+/* ==================================================================== */
+/* ==================Responsiv : mobile================================ */
+@media(max-width:800px) {
+
+    #aside-left {
+        display: none;
+    }
+
+    #main {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 60px;
+        right: 0;
+    }
+
+
 }
