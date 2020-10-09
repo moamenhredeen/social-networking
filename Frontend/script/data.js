@@ -28,5 +28,20 @@ const posts = [{
 
 const UI = {
     // control posts ui
-    posts: []
+    posts: [{
+            id: 1,
+            toggleComment: false
+        },
+        {
+            id: 2,
+            toggleComment: true
+        },
+        {
+            id: 3,
+            toggleComment: true
+        }, {
+            id: 4,
+            toggleComment: false
+        }
+    ]
 }

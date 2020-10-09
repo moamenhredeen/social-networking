@@ -35,6 +35,7 @@
     background-color: yellow;
 }
 
+
 /* ================================main-container======================================== */
 #main-container {
     position: relative;
@@ -459,4 +460,10 @@
     }
 
 
+}
+
+
+/* ui control  */
+.hide {
+    display: none;
 }
