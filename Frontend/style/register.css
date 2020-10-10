@@ -2,7 +2,9 @@
 :root {
     --main-green: #28a745;
   }
-
+*{
+    box-sizing: border-box;
+}
 body, html{
     top:  0;
     right: 0;
@@ -13,7 +15,8 @@ body, html{
 }
  .contianer{
     display: flex;
-    width: 100%
+    width: 100%;
+    margin: 0;
  }
 
 
@@ -34,7 +37,7 @@ body, html{
       flex: 1;
       box-shadow: -7px 7px 7px var(--main-green);
       padding-bottom: 1rem;
-      height: 515px;
+       height: 525px; 
       margin-right: 2rem;
  } 
 
@@ -95,16 +98,22 @@ form{
 
 .div-input-date{
 
-   display: flex;
-   justify-content: space-between;
-    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    /* height: 35px; */
     width: 60%; 
     margin-bottom: 0.8rem;
     flex-flow: wrap;
 }
 .div-input-date label{
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: sans-serif;
+}
+.label-date{
+    height: 100%;
+}
+.input-date{
+    height: 35px;
 }
 .div-input-date input{
     height: 100%;
@@ -121,16 +130,16 @@ form{
 
   .div-label-select{
      
-      height: 35px;
+      /* height: 35px; */
       width: 60%;
       margin-bottom: 0.8rem; 
       display: flex;
       justify-content: space-between;
-       flex-flow: wrap;
+      flex-flow: wrap;
 
   }
   .div-label-select label{
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: sans-serif;
   }
 
@@ -141,6 +150,7 @@ form{
      border-radius: 30px;
      outline: none;
      padding-left: 0.4rem;
+     height: 35px;
   }
 .input-field i{
     flex: 0.3;
@@ -187,7 +197,7 @@ form{
     border: none;
     margin-top: 1rem;
     width: 10rem;
-   border-radius: 30px;
+    border-radius: 30px;
     color: white;
 }
 .footer {
@@ -202,11 +212,18 @@ form{
 
  /*    Responsve  800px */
 
-@media(max-width:600px){
+ @media(max-width:1125px){
+
+    .div-form{
+  height: 100%;
+    }
+ }
+@media(max-width:800px){
     .register{
         transform: skewX(0deg);
         box-shadow: 0 0 0 var(--main-green);
         margin: 0;
+        
     }
     .div-form{
         box-shadow: 0 0 0 var(--main-green);
@@ -249,6 +266,9 @@ form{
         /* width: 8rem; */
       width: 100%;
     }
+    .input-date{
+        width: 100%;
+    }
     .div-label-select{
         width: 100%;
     }
@@ -258,5 +278,7 @@ form{
    
     .div-label-select select{
         font-size: 0.9rem;
+        width: 100%;
     }
+
 }
