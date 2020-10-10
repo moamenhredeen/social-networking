@@ -1,11 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/index.css">
+    <script src="./script/jquery-3.5.1.min.js" defer></script>
+    <script src="script/helperFunctions.js" defer></script>
+    <script src="script/dom.js" defer></script>
+    <script src="./script/modal.js" defer></script>
+    <script src="script/post-ouput.js" defer></script>
+    <script src="script/app.js" defer></script>
     <title>Home page</title>
 </head>
+
 <body>
-    Homepage
+
+    <div id="main-container">
+        <!----------------------------------------------------------------------
+        modal -->
+        <div id="backdrop"></div>
+        <div id="modal">
+            <!-- <div id="modal-input">
+                <input type="text">
+            </div> -->
+            <div id="modal-close">
+                <span id="modal-close-icon" class="material-icons">close</span>
+            </div>
+            <div id="modal-nav">
+                <ul>
+                    <li><a class="active" href="#">HOME</a></li>
+                    <li><a href="#">FRINDS</a></li>
+                    <li><a href="#">PROFLIE</a></li>
+                    <li><a href="#">SEARCH</a></li>
+                    <li><a href="#">SETTINGS</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------------------------------------------------
+        activity-bar -->
+        <aside id="activitybar">
+            <div id="burger">
+                <img src="./assets/menu-24px.svg" alt="">
+            </div>
+            <div id="close">
+                <img src="./assets/close-24px.svg" alt="">
+            </div>
+            <ul id="activitybar-links">
+                <li><img src="./assets/notifications_active-24px.svg" alt=""></li>
+                <li><img src="./assets/people_alt-24px.svg" alt=""></li>
+                <li><img src="./assets/groups-24px.svg" alt=""></li>
+                <li><img src="./assets/iconmonstr-bookmark-9.svg" alt=""></li>
+            </ul>
+        </aside>
+
+        <!----------------------------------------------------------------------
+    nav-bar -->
+        <nav id="nav">
+            <div id="logo">
+                <span id="logo-text">ARAB CODERS</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a class="active" href="#">HOME</a></li>
+                <li><a href="#">FRINDS</a></li>
+                <li><a href="#">PROFLIE</a></li>
+                <li><a href="#">SEARCH</a></li>
+                <li><a href="#">SETTINGS</a></li>
+            </ul>
+        </nav>
+
+
+
+        <!----------------------------------------------------------------------
+    aside-left   -->
+        <aside id="aside-left">
+        </aside>
+
+
+        <!----------------------------------------------------------------------
+    aside-right   -->
+        <aside id="aside-right">
+        </aside>
+
+
+
+        <!----------------------------------------------------------------------
+    main section  -->
+        <main id="main">
+
+
+            <!----------------------------------------------------------------------
+        input-post  -->
+            <div id="post-input">
+                <div id="post-input-header">
+                    <div class="profile-img">
+                        <span class="material-icons">
+                            account_circle
+                        </span>
+                    </div>
+
+                    <textarea name="post-content" id="post-content" placeholder="What's happening?" cols="30"
+                        rows="10"></textarea>
+
+                </div>
+
+                <div class="line">
+                    <hr>
+                </div>
+
+                <div id="post-input-bottom">
+                    <div id="actions">
+                        <div class="action" id="action-photo">
+                            <span class="material-icons">
+                                add_photo_alternate
+                            </span>
+                        </div>
+
+                        <div class="action" id="action-gif">
+                            <span class="material-icons">
+                                gif
+                            </span>
+                        </div>
+
+                        <div class="action" id="action-emoji">
+                            <span class="material-icons">
+                                sentiment_satisfied_alt
+                            </span>
+                        </div>
+                    </div>
+
+                    <div id="action-submit">
+                        <button>POST</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="post-list">
+
+                <!----------------------------------------------------------------------
+        output-post  -->
+                <div class="post-output hide">
+                    <div class="post-output-header">
+                        <div class="profile-img">
+                            <span class="material-icons">
+                                account_circle
+                            </span>
+                        </div>
+
+                        <div class="post-content">
+                            <p>
+
+                            </p>
+                        </div>
+                        <div class="post-actions">
+                            <span class="material-icons">
+                                more_vert
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="line">
+                        <hr>
+                    </div>
+
+                    <div class="post-output-bottom">
+                        <div class="actions">
+                            <div class="action action-favorite">
+                                <span class="material-icons">
+                                    favorite_border
+                                </span>
+                            </div>
+
+                            <div class="action action-comment">
+                                <span class="material-icons">
+                                    comment
+                                </span>
+                            </div>
+
+                            <div class="action action-share">
+                                <span class="material-icons">
+                                    share
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="post-output-comment hide">
+                        <div class="comment-input">
+                            <span class="material-icons">
+                                send
+                            </span>
+                            <input type="text" placeholder="write your comment here ...">
+                        </div>
+                        <div class="comment-output">
+                            <span class="material-icons">
+                                account_circle
+                            </span>
+                            <p> comment example : hallo kenan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
+
 </html>

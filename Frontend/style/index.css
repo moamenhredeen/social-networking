@@ -1,6 +1,469 @@
-html:{
-    padding: 0;
-    margin: 0;
+/* ==================variables================================ */
+:root {
+    /* colors */
+    --main-green: #69971E;
+    --main-green-hell: #69971E66;
+    --text-hell: #ffffff;
+    --text-dark: #050505;
+    --gray: #333333;
+    --gray-hell: rgba(0, 0, 0, 0.4);
+    --white-gray: rgba(0, 0, 0, 0.4);
+    --white: #ffffff;
+    /* text */
+    --font-family: 'Monda', sans-serif;
 }
 
 
+
+
+/* ==================general================================ */
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--font-family);
+}
+
+*,
+*:focus,
+*:hover {
+    outline: none;
+}
+
+*::selection {
+    background-color: yellow;
+}
+
+
+/* ================================main-container======================================== */
+#main-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ================================modal======================================== */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 30;
+    top: 10%;
+    left: 30%;
+    width: 40%;
+    background: white;
+    box-shadow: 1px 1px 6px var(--gray-hell);
+    padding: 1rem;
+}
+
+#modal-close {
+    width: 100%;
+    text-align: right;
+    padding: 5px 10px;
+}
+
+#modal-close-icon {
+    cursor: pointer;
+}
+
+
+#modal-input {
+    margin: 0.5rem 0;
+}
+
+#modal-input input {
+    width: 100%;
+    font: inherit;
+    resize: none;
+}
+
+#modal-input input:focus {
+    outline: none;
+    background: #ffdbfe;
+    border-color: #521751;
+}
+
+#backdrop {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+#modal-nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-nav li {
+    list-style: none;
+}
+
+#modal-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: inline-block;
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    font-weight: bold;
+}
+
+#modal-nav a:hover {
+    background: var(--main-green-hell);
+}
+
+
+
+
+/* ================================activitybar======================================== */
+
+
+#activitybar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-width: 60px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--gray);
+}
+
+
+#burger {
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+
+#close {
+    cursor: pointer;
+    margin: 20px 0;
+    display: none;
+}
+
+
+#activitybar-links li {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+#activitybar-links li {
+    cursor: pointer;
+}
+
+
+/* ==================navbar================================ */
+#nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 60px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: var(--gray);
+}
+
+#logo {
+    background-color: var(--main-green);
+    padding: 10px;
+    height: 60px;
+}
+
+#logo-text {
+    color: var(--text-hell);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    font-weight: bold;
+    justify-content: right;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-hell);
+    display: inline-block;
+    padding: 20px;
+    height: 60px;
+}
+
+.nav-links a:hover {
+    background-color: var(--main-green-hell);
+}
+
+.active {
+    background-color: var(--main-green);
+}
+
+/* ================================aside-left======================================== */
+#aside-left {
+    position: fixed;
+    top: 60px;
+    left: 60px;
+    width: 25%;
+    bottom: 0;
+    z-index: 10;
+}
+
+/* ================================aside-right======================================== */
+#aside-right {
+    position: fixed;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    width: 25%;
+    z-index: 10;
+}
+
+
+/* ================================main======================================== */
+
+
+#main {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: calc(60px + 25vw);
+    right: 25vw;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+#post-input {
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px var(--gray-hell);
+}
+
+#post-input-header {
+    display: flex;
+    height: 120px;
+}
+
+.profile-img {
+    padding: 5px;
+}
+
+.profile-img>span {
+    color: var(--main-green);
+    cursor: pointer;
+    font-size: 5rem;
+}
+
+
+#post-content {
+    width: 85%;
+    height: 100%;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    resize: none;
+}
+
+#post-content:focus {
+    border: none;
+}
+
+.line {
+    padding: 9px 0;
+}
+
+.line>hr {
+    border: 1px solid var(--main-green-hell);
+}
+
+
+#post-input-bottom {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+
+#actions {
+    width: 40%;
+    display: flex;
+}
+
+#actions>.action {
+    padding: 10px;
+}
+
+#actions>.action>span {
+    cursor: pointer;
+    color: var(--main-green);
+    font-size: 2rem;
+}
+
+#action-submit {
+    width: 100px;
+}
+
+#action-submit>button {
+    width: 100%;
+    height: 100%;
+    background: var(--main-green);
+    color: var(--text-hell);
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+
+
+.post-output {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px var(--gray-hell);
+}
+
+
+.post-output-header {
+    display: flex;
+}
+
+
+.post-actions span {
+    color: var(--main-green);
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.post-actions span:hover {
+    background-color: var(--main-green-hell);
+}
+
+.post-content {
+    width: 100%;
+}
+
+.post-output-bottom>.actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.post-output-bottom span {
+    cursor: pointer;
+    color: var(--main-green);
+    font-size: 2rem;
+}
+
+
+
+
+.comment-input {
+    position: relative;
+    padding: 10px;
+}
+
+.comment-input input {
+    width: 100%;
+    border-radius: 25px;
+    border: solid 1px var(--main-green-hell);
+    padding: 5px 40px 5px 20px;
+}
+
+
+.comment-input span {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    color: var(--main-green);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.comment-output {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.comment-output span {
+    font-size: 2rem;
+    padding: 10px;
+    color: var(--main-green);
+}
+
+.comment-output p {
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+/* ==================Responsiv : tablet================================ */
+@media (max-width : 1024px) {
+
+    .nav-links {
+        display: none;
+    }
+
+
+    #aside-right {
+        display: none;
+    }
+
+    #aside-left {
+        width: 30%;
+    }
+
+    #main {
+        left: calc(60px + 30vw);
+        right: 0;
+    }
+
+}
+
+
+/* ==================================================================== */
+/* ==================Responsiv : mobile================================ */
+@media(max-width:800px) {
+
+    #aside-left {
+        display: none;
+    }
+
+    #main {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 60px;
+        right: 0;
+    }
+
+
+}
+
+
+/* ui control  */
+.hide {
+    display: none;
+}
