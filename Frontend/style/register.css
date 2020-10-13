@@ -1,6 +1,7 @@
 
 :root {
     --main-green: #28a745;
+    --red: red;
   }
 *{
     box-sizing: border-box;
@@ -116,11 +117,19 @@ form{
     height: 35px;
 }
 .div-input-date input{
+    
     height: 100%;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+.input-date{
     border: 1px solid var(--main-green);
     font-size: 1.2rem;
     border-radius: 30px;
-    outline: none;
+  
+    
+    
 }
 .div-input-date input::-webkit-datetime-edit {
     padding: 0 1rem;
@@ -145,12 +154,16 @@ form{
 
   .div-label-select select{
      width: 12rem;
-     border: 1px solid var(--main-green);
-     font-size: 1.2rem;
-     border-radius: 30px;
+     font-size: 1rem;
      outline: none;
      padding-left: 0.4rem;
      height: 35px;
+     border: none;
+     border-radius: 30px;
+  }
+  .div-select{
+    border: 1px solid var(--main-green);
+    border-radius: 30px;
   }
 .input-field i{
     flex: 0.3;
@@ -281,4 +294,8 @@ form{
         width: 100%;
     }
 
+}
+
+.redBorder{
+    border: 1px solid var(--red); 
 }
