@@ -1,37 +1,29 @@
 
-const getUserFromLocalStorage = ()=>{
-      let users = [];
-      const usersString = localStorage.getItem('users');
-      if( usersString ){
-           users =  JSON.parse(usersString);
-      }
-      return users;
-}
-
 const saveUsersInLocalStorage = (users)=>{
       localStorage.setItem('users',JSON.stringify(users));
 }
 
-const reset =  ()=>{
-    [userNameInput, passwordInput, eamilInput, dateInput, genderInput ]
-      .forEach(e=>{
-          e.val('');
-      })
-}
-const getUserData = ()=>{
+// const reset =  ()=>{
+//     [userNameInput, passwordInput, eamilInput, dateInput, genderInput ]
+//       .forEach(e=>{
+//           e.val('');
+//       })
+// }
+const getAndValidateUserData = ()=>{
    let isValid = true;  
     return[([userNameInput, passwordInput, eamilInput, dateInput, genderInput ]
       .map((e)=>{
-       if(! e.val()){
+       if(! e.val() || (e.attr('name') === 'email' && !validateEmail(e.val()) )){
         e.parent().addClass('redBorder'); 
          isValid = false; 
-       }else{
+       }
+       else{
         e.parent().removeClass("redBorder");
        }
        return {key:e.attr('name'), value:e.val()};
    })),isValid];
            
-    
+        
 } ;
 
 const addUser = (userData)=>{
@@ -47,11 +39,11 @@ const addUser = (userData)=>{
 
 const register  = (e)=>{
     e.preventDefault();
-    const [data,isValid] = getUserData();
+    const [data,isValid] = getAndValidateUserData();
 
     if(isValid){
        addUser(data);
-       reset();
+       window.location.href = '../index.html';
     }
 }
 

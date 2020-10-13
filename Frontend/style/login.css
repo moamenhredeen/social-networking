@@ -203,3 +203,10 @@ form{
     }
    
 }
+.error-massge{
+    color: red;
+    padding-bottom: 1rem;
+}
+.hide{
+    display: none;
+}
