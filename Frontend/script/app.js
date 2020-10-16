@@ -27,6 +27,27 @@ const addComment = (postId) => {
 }
 
 
+const toggleLikeToPostUI = (postId, cheked) => {
+    let icon ;
+    if(cheked){
+        icon = 'favorite';
+    }else{
+        icon = 'favorite_border'
+    }
+    $(`#${postId}`).find('.action-favorite > span').text(icon);
+}
+
+const toggleLike = (postId) => {
+    const checked = toggleLikeToPost(
+        postId,
+        getUserAuthenticationData().userId)
+    toggleLikeToPostUI(postId, checked);
+}
+
+const toggleActionsMenuUI = (postId) => {
+    $(`#${postId}`).find('.actions-menu').toggleClass('hide');
+}
+
 const createNewPost = (id, content) => {
     const newPost = outputPost.clone();
     newPost.removeClass('hide');
@@ -42,6 +63,13 @@ const createNewPost = (id, content) => {
         addComment(id);
     })
 
+    newPost.find('.action-favorite > span').click(() => {
+        toggleLike(id)
+    })
+
+    newPost.find('.post-actions > span').click(() => {
+        toggleActionsMenuUI(id)
+    })
 
     // add to the dom
     main.prepend(newPost)
@@ -49,30 +77,19 @@ const createNewPost = (id, content) => {
 
 
 const addPost = () => {
-    let lastId
-    if(posts.length === 0 ){
-        lastId = 0 ;         
-    }else{
-        lastId = ++(posts[posts.length - 1].id)
-    }
-    const userInput = textArea.val();
     const userId = getUserAuthenticationData().userId ;
+    const userInput = textArea.val();
+    const lastId = addPostToPosts(userId, userInput);
     createNewPost(lastId, userInput)
-    posts.push({
-        id: lastId,
-        body: userInput,
-        userId : userId
-    });
     addPostIdToUser(userId, lastId);
-    console.log(posts)
     textArea.val('')
-    savePostsInLocalStorage(posts);
 }
 
 
 
 // initial state
-const updatePosts = (posts) => {
+const updatePosts = () => {
+    const posts = getPostsFromLocalStorage()
     for (let i = 0; i < posts.length; i++) {
         createNewPost(posts[i].id, posts[i].body);
         if(posts[i].comments){
@@ -88,8 +105,7 @@ const updatePosts = (posts) => {
 
 
 // entry point ===============================================
-const posts = getPostsFromLocalStorage();
-updatePosts(posts);
+updatePosts();
 
 
 // attach eventhandler

@@ -49,24 +49,63 @@ const addCommentToPost = (userId, postId,content) => {
     posts = posts.map((el, index) => {
         const newEl = {...el};
         if(el.id === postId){
-            if(newEl.comments){
-                const newComments = [...newEl.comments];
-                newComments.push({
-                    content:content,
-                    userId : userId
-                });
-                newEl.comments = newComments
-            }else{
-                const newComments = [{
-                    content:content,
-                    userId : userId
-                }]
-                newEl.comments = newComments
-            }
-            return newEl;
-        }else{
-            return newEl;
+            const newComments = [...newEl.comments];
+            newComments.push({
+                content:content,
+                userId : userId
+            });
+            newEl.comments = newComments
         }
+        return newEl;
     })
     savePostsInLocalStorage(posts);
+}
+
+
+const toggleLikeToPost = (postId, userId) => {
+    let posts = getPostsFromLocalStorage();
+    let liked = false;
+    posts = posts.map((el, index) => {
+        const newEl = {...el};
+        if(newEl.id === postId){
+            let newLikes = [...newEl.likes];
+            if(newLikes.indexOf(userId) === -1){
+                newLikes.push(userId);
+                liked = true;
+            }else{
+                newLikes = newLikes.filter((el) => el !== userId)
+            }
+            newEl.likes = newLikes
+        }
+        return newEl;
+    })
+    savePostsInLocalStorage(posts);
+    return liked;
+}
+
+const addPostToPosts = (userId, userInput) => {
+    const posts = getPostsFromLocalStorage()
+        .map(el => {
+            return ({
+                ...el,
+                likes: [...el.likes],
+                comments:[...el.comments]
+            })
+        })
+    let lastId
+    if(posts.length === 0 ){
+        lastId = 0 ;         
+    }else{
+        lastId = posts.length;
+    }
+    posts.push({
+        id: lastId,
+        body: userInput,
+        userId : userId,
+        comments:[],
+        likes:[]
+    });
+    log(posts)
+    savePostsInLocalStorage(posts);
+    return lastId;
 }
